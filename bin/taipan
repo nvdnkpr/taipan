@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+var program = require('commander'),
+	taipan = require('..');
+
+program
+	.version(require('../package').version, '-v, --version')
+	.description('Create an npm package.json from a Titanium tiapp.xml, and vice versa')
+	.usage('SRC [DST] [options]');
+
+program.parse(process.argv);
+
+var source = program.args[0];
+if (!source) {
+	console.error('error: source file not specified');
+	process.exit(1);
+}
+
+taipan(source);

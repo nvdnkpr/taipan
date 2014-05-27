@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 			src: ['tmp']
 		},
 		istanbul: {
-			src: ['test/*_test.js']
+			src: ['test/**/*_test.js']
 		}
 	});
 
